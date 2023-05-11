@@ -20,4 +20,8 @@ describe("fizzbuzz", () => {
   it("should return the number as string when it is not divisible by 3 and 5", () => {
     expect(fizzbuzz(7)).toEqual("7");
   });
+
+  it('should throw "Number out of range" when input is greater than 100', () => {
+    expect(fizzbuzz(102)).toThrow("Number out of range");
+  });
 });
