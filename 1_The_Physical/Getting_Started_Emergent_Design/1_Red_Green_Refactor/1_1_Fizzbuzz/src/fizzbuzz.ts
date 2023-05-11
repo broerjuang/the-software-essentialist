@@ -1,11 +1,14 @@
 export function fizzbuzz(input: number) {
-  if (input % 3 === 0 && input % 5 === 0) {
+  let isDivisibleBy3 = input % 3 === 0;
+  let isDivisibleBy5 = input % 5 === 0;
+
+  if (isDivisibleBy3 && isDivisibleBy5) {
     return "FizzBuzz";
-  } else if (input % 3 === 0) {
+  } else if (isDivisibleBy3) {
     return "Fizz";
-  } else if (input % 5 === 0) {
+  } else if (isDivisibleBy5) {
     return "Buzz";
-  } else if (input % 3 !== 0 && input % 5 !== 0) {
+  } else if (!isDivisibleBy3 && !isDivisibleBy5) {
     return input.toString();
   }
 }
