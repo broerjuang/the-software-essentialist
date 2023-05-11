@@ -16,4 +16,8 @@ describe("fizzbuzz", () => {
     expect(result).toEqual("FizzBuzz");
     expect(fizzbuzz(45)).toEqual("FizzBuzz");
   });
+
+  it("should return the number as string when it is not divisible by 3 or 5", () => {
+    expect(fizzbuzz(7)).toEqual("7");
+  });
 });
