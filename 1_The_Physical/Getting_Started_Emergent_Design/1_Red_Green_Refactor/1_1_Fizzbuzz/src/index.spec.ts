@@ -22,6 +22,6 @@ describe("fizzbuzz", () => {
   });
 
   it('should throw "Number out of range" when input is greater than 100', () => {
-    expect(fizzbuzz(102)).toThrow("Number out of range");
+    expect(() => fizzbuzz(102)).toThrow("Number out of range");
   });
 });

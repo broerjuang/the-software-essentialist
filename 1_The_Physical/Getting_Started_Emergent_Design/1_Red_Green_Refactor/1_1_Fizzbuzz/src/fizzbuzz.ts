@@ -2,7 +2,9 @@ export function fizzbuzz(input: number) {
   let isDivisibleBy3 = input % 3 === 0;
   let isDivisibleBy5 = input % 5 === 0;
 
-  if (isDivisibleBy3 && isDivisibleBy5) {
+  if (input > 100) {
+    throw new Error("Number out of range");
+  } else if (isDivisibleBy3 && isDivisibleBy5) {
     return "FizzBuzz";
   } else if (isDivisibleBy3) {
     return "Fizz";
