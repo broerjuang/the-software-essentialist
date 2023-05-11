@@ -1,1 +1,5 @@
-export function fizzbuzz(input: number) {}
+export function fizzbuzz(input: number) {
+  if (input % 3 === 0) {
+    return "Fizz";
+  }
+}
