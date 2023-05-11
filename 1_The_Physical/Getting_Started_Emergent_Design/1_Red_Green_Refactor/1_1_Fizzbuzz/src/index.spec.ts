@@ -10,4 +10,9 @@ describe("fizzbuzz", () => {
     let result = fizzbuzz(5);
     expect(result).toEqual("Buzz");
   });
+
+  it('should return "FizzBuzz" when input is divisible by both 3 and 5', () => {
+    let result = fizzbuzz(15);
+    expect(result).toEqual("FizzBuzz");
+  });
 });
