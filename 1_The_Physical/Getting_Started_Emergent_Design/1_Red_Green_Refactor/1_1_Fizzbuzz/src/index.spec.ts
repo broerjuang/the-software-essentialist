@@ -1,31 +1,42 @@
 import { fizzbuzz } from "./fizzbuzz";
 
 describe("fizzbuzz", () => {
-  it('should return "Fizz" when input is divisible by 3', () => {
-    expect(fizzbuzz(3)).toEqual("Fizz");
-    expect(fizzbuzz(9)).toEqual("Fizz");
-    expect(fizzbuzz(42)).toEqual("Fizz");
-  });
+  it.each([3, 9, 42])(
+    'should return "Fizz" when input is divisible by 3',
+    (input) => {
+      expect(fizzbuzz(input)).toEqual("Fizz");
+    }
+  );
 
-  it('should return "Buzz" when input is divisible by 5', () => {
-    expect(fizzbuzz(5)).toEqual("Buzz");
-  });
+  it.each([5, 10, 20, 25])(
+    'should return "Buzz" when input is divisible by 5',
+    (input) => {
+      expect(fizzbuzz(input)).toEqual("Buzz");
+    }
+  );
 
-  it('should return "FizzBuzz" when input is divisible by both 3 and 5', () => {
-    let result = fizzbuzz(15);
-    expect(result).toEqual("FizzBuzz");
-    expect(fizzbuzz(45)).toEqual("FizzBuzz");
-  });
+  it.each([15, 30, 45])(
+    'should return "FizzBuzz" when input is divisible by both 3 and 5',
+    (input) => {
+      expect(fizzbuzz(input)).toEqual("FizzBuzz");
+    }
+  );
 
-  it("should return the number as string when it is not divisible by 3 and 5", () => {
-    expect(fizzbuzz(7)).toEqual("7");
-  });
+  it.each([
+    [4, "4"],
+    [7, "7"],
+    [8, "8"],
+  ])(
+    "should return the number as string when it is not divisible by 3 and 5",
+    (input, result) => {
+      expect(fizzbuzz(input)).toEqual(result);
+    }
+  );
 
-  it('should throw "Number out of range" when input is greater than 100', () => {
-    expect(() => fizzbuzz(102)).toThrow("Number out of range");
-  });
-
-  it('should throw "Number out of range" when input is less than 0', () => {
-    expect(() => fizzbuzz(-2)).toThrow("Number out of range");
-  });
+  it.each([-2, -100, 101, 200])(
+    'should throw "Number out of range" for input less than 0 or greater than 100',
+    (input) => {
+      expect(() => fizzbuzz(input)).toThrow("Number out of range");
+    }
+  );
 });
