@@ -20,4 +20,9 @@ describe("palindrome checker", () => {
   it(`should be able to tell if "Mom" is palindrome`, () => {
     expect(Palindrome.isPalindrome("Mom")).toBe(true);
   });
+
+  it(`should be able to tell if "Was It A Rat I Saw" is palindrome`, () => {
+    let input = "Was It A Rat I Saw";
+    expect(Palindrome.isPalindrome(input)).toBe(true);
+  });
 });
