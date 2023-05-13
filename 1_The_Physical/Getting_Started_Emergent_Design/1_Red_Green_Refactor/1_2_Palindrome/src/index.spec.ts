@@ -25,4 +25,9 @@ describe("palindrome checker", () => {
     let input = "Was It A Rat I Saw";
     expect(Palindrome.isPalindrome(input)).toBe(true);
   });
+
+  it(`should be able to tell if "Never Odd or Even" is palindrome`, () => {
+    let input = "Never Odd or Even";
+    expect(Palindrome.isPalindrome(input)).toBe(true);
+  });
 });
