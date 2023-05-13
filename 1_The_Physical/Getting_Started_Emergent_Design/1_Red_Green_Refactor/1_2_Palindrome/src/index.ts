@@ -1,8 +1,9 @@
 export class Palindrome {
   static isPalindrome(input: string) {
+    let toLowerCaseThenReplace = input.toLowerCase().replace(/ /g, "");
     return (
-      input.toLowerCase().replace(/ /g, "") ===
-      input.replace(/ /g, "").split("").reverse().join("").toLowerCase()
+      toLowerCaseThenReplace ===
+      toLowerCaseThenReplace.split("").reverse().join("")
     );
   }
 }
