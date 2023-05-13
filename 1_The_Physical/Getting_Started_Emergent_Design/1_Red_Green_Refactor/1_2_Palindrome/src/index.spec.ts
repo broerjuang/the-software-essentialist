@@ -5,29 +5,18 @@ describe("palindrome checker", () => {
     expect(Palindrome.isPalindrome).toBeDefined();
   });
 
-  it(`should be able to tell if "mom" is palindome`, () => {
-    expect(Palindrome.isPalindrome("mom")).toBe(true);
-  });
-
-  it(`should be able to tell if "wow" is palindrome`, () => {
-    expect(Palindrome.isPalindrome("wow")).toBe(true);
+  it.each([
+    "mom",
+    "wow",
+    "Mom",
+    "xMomx",
+    "Was It A Rat I Saw",
+    "Never Odd or Even",
+  ])(`shoule be able to tell if "%s" is a palindrome`, (input) => {
+    expect(Palindrome.isPalindrome(input)).toBe(true);
   });
 
   it(`should be able to tell if "bill" is NOT a palindrome`, () => {
     expect(Palindrome.isPalindrome("bill")).toBe(false);
-  });
-
-  it(`should be able to tell if "Mom" is palindrome`, () => {
-    expect(Palindrome.isPalindrome("Mom")).toBe(true);
-  });
-
-  it(`should be able to tell if "Was It A Rat I Saw" is palindrome`, () => {
-    let input = "Was It A Rat I Saw";
-    expect(Palindrome.isPalindrome(input)).toBe(true);
-  });
-
-  it(`should be able to tell if "Never Odd or Even" is palindrome`, () => {
-    let input = "Never Odd or Even";
-    expect(Palindrome.isPalindrome(input)).toBe(true);
   });
 });
