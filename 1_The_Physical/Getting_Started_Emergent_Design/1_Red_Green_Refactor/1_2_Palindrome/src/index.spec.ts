@@ -16,7 +16,10 @@ describe("palindrome checker", () => {
     expect(Palindrome.isPalindrome(input)).toBe(true);
   });
 
-  it(`should be able to tell if "bill" is NOT a palindrome`, () => {
-    expect(Palindrome.isPalindrome("bill")).toBe(false);
-  });
+  it.each(["bill", "Bill", "Never Odd or Even1", "Momx"])(
+    `should be able to tell if "%s" is NOT a palindrome`,
+    (input) => {
+      expect(Palindrome.isPalindrome(input)).toBe(false);
+    }
+  );
 });
