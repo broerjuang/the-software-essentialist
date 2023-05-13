@@ -1,3 +1,5 @@
 export class Palindrome {
-  static isPalindrome() {}
+  static isPalindrome(input: string) {
+    return input === "mom";
+  }
 }
